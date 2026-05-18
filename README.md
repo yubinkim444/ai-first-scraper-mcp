@@ -119,6 +119,11 @@ and produce the summary without ever touching raw HTML.
   per-URL Markdown cleaner this MCP server fans out to.
 - **[ai-first-search](https://github.com/yubinkim444/ai-first-search)** —
   search → scrape → markdown pipeline.
+- **[mcp-rec](https://github.com/yubinkim444/mcp-rec)** — record & replay any MCP server's traffic for tests and bug reports.
+- **[llm-cache-proxy](https://github.com/yubinkim444/llm-cache-proxy)** — local cache for OpenAI/Anthropic API calls.
+- **[promptlocker](https://github.com/yubinkim444/promptlock)** — lockfile for prompts.
+- **[context-diff](https://github.com/yubinkim444/context-diff)** — see what blew up your Claude Code context window.
+- **[agentwatch](https://github.com/yubinkim444/agentwatch)** — overlay for browser AI agents.
 
 ---
 
