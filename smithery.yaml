@@ -1,0 +1,27 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      scraperUrl:
+        type: string
+        default: "https://ai-first-scraper.onrender.com"
+        description: "URL of the ai-first-scraper instance to call for fetch_page / fetch_pages_batch."
+      searchUrl:
+        type: string
+        default: "https://ai-first-search.onrender.com"
+        description: "URL of the ai-first-search instance to call for search_web."
+      timeoutSeconds:
+        type: number
+        default: 45
+        description: "HTTP timeout for upstream calls."
+  commandFunction: |-
+    config => ({
+      command: 'uvx',
+      args: ['ai-first-scraper-mcp'],
+      env: {
+        SCRAPER_URL: config.scraperUrl || 'https://ai-first-scraper.onrender.com',
+        SEARCH_URL: config.searchUrl || 'https://ai-first-search.onrender.com',
+        AFS_TIMEOUT: String(config.timeoutSeconds || 45),
+      },
+    })
