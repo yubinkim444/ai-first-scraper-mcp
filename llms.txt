@@ -1,0 +1,34 @@
+# ai-first-scraper-mcp
+
+> MCP (Model Context Protocol) server that exposes ad-free web scraping and search as three tools for Claude Desktop / Cursor / Cline / any MCP-compatible agent.
+
+## Install for an AI agent (Claude Desktop / Cursor / Cline)
+
+```json
+{
+  "mcpServers": {
+    "ai-first-scraper": {
+      "command": "uvx",
+      "args": ["ai-first-scraper-mcp"]
+    }
+  }
+}
+```
+
+After restart, three tools become available:
+
+| Tool | Args | Returns |
+|------|------|---------|
+| `fetch_page` | `url: str, max_tokens?: int` | Clean Markdown body (HTML or PDF). |
+| `fetch_pages_batch` | `urls: list[str] (≤25), max_tokens?: int` | Per-URL `{url, ok, data?, error?}` objects. |
+| `search_web` | `q: str, k: int = 5, max_tokens?: int` | Top-k result pages already converted to Markdown. |
+
+## Config (optional)
+Point at your own backend with env vars:
+- `SCRAPER_URL` (default `https://ai-first-scraper.onrender.com`)
+- `SEARCH_URL` (default `https://ai-first-search.onrender.com`)
+
+## Related
+- https://github.com/yubinkim444/ai-first-scraper — backing scraper API.
+- https://github.com/yubinkim444/ai-first-search — backing search API.
+- https://github.com/yubinkim444/mcp-rec — record & replay this server's traffic for tests.
