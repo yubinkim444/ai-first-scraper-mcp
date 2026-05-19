@@ -1,3 +1,7 @@
+<!--
+mcp-name: io.github.yubinkim444/ai-first-scraper-mcp
+-->
+
 # ai-first-scraper-mcp
 
 > **Plug Claude Desktop, Cursor, or Cline straight into an ad-free web
